@@ -4,6 +4,7 @@
 
 本插件为项目提供**分层架构编码规范**指导，当前包含 Java 规范（Python 规范待补充），涵盖：
 
+java：
 - 分层架构：Controller → 混合业务层 → 单领域业务层 → 数据访问层（Repo）→ Mapper
 - 各层命名规则（如 `IT*Service`、`IT*Repo`、`IT*Mapper`）
 - 各层职责划分与依赖约束（严禁越层依赖）
