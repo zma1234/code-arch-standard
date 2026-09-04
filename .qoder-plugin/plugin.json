@@ -1,0 +1,17 @@
+{
+  "name": "code-arch-standard",
+  "displayName": "Java 分层架构编码规范",
+  "version": "0.1.0",
+  "description": "Enforces the 5-layer architecture coding conventions for Java projects.",
+  "descriptionZh": "为 Java 项目提供五层分层架构编码规范指导。",
+  "author": {
+    "name": "zhoumuan"
+  },
+  "homepage": "",
+  "repository": "",
+  "logo": "./assets/avatar.svg",
+  "keywords": ["qoder-plugin", "skill", "architecture", "coding-standard", "java"],
+  "category": "developer-tools",
+  "tags": ["skill"],
+  "skills": "./skills/"
+}
