@@ -1,7 +1,7 @@
 {
   "name": "code-arch-standard",
   "displayName": "代码分层架构编码规范",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Enforces the layer architecture coding conventions for projects.",
   "descriptionZh": "为项目提供分层架构编码规范指导。",
   "author": {
