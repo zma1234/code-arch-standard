@@ -28,25 +28,7 @@ java：
 
 ### 安装步骤
 
-**方式一：手动复制目录（推荐）**
-
-1. 克隆或下载本仓库到本地
-2. 将 `code-arch-standard` 目录复制到 Qoder CN 用户插件目录：
-   - Windows：`C:\Users\<用户名>\.qoder-cn\plugins\custom\`
-   - macOS / Linux：`~/.qoder-cn/plugins/custom/`
-3. 确认目录结构完整：
-
-   ```text
-   code-arch-standard/
-   ├── .qoder-plugin/plugin.json   # 插件清单
-   ├── rules/java.md               # Java 分层架构编码规范
-   ├── rules/python.md             # Python 分层架构编码规范
-   └── assets/avatar.svg           # 插件图标
-   ```
-
-4. 重启 IDE（或重新打开项目）使插件生效
-
-**方式二：通过插件管理界面导入**
+**通过插件管理界面导入**
 
 1. 打开 IDEA 设置：`Settings → Qoder CN → 个人设置 → 插件`
 2. 点击右上角 **导入 ZIP**（本地 zip 包）或 **新建插件**
