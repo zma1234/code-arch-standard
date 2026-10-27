@@ -1,7 +1,5 @@
 ---
-trigger: glob
-glob:
-- "**/*.java"
+trigger: always_on
 ---
 # Java 分层架构编码规范
 
