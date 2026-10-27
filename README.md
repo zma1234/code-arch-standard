@@ -46,24 +46,62 @@ java：
 进入规则页后：
 
 1. 将「范围」切换为 **全部** 或 **用户**，确认列表中能看到 `java.md`、`python.md`
-2. 确认两个规则的「类型」均为 **指定文件生效**（来自规则文件 frontmatter 的 `trigger: glob` 声明）
+2. 确认两个规则的「类型」为 **始终生效**（来自规则文件 frontmatter 的 `trigger: always_on` 声明；若改为 `trigger: glob`，则显示为 **指定文件生效**）
 3. 若列表未更新，点击页面右上角 **刷新** 按钮重新加载
 
 ### 使用说明
 
 - 本插件为 rules-only 插件，不含可通过斜杠命令调用的技能
-- `rules/java.md` 声明了 `trigger: glob` + `glob: ["**/*.java"]`，属于**指定文件生效**类型：处理 `.java` 文件时自动加载并注入规范
-- `rules/python.md` 声明了 `trigger: glob` + `glob: ["**/*.py"]`，属于**指定文件生效**类型：处理 `.py` 文件时自动加载并注入规范
-- 如需让规则在**所有对话中始终生效**（不分文件类型），将 frontmatter 改为：
+- 当前 `rules/java.md`、`rules/python.md` 的 frontmatter 均为 `trigger: always_on`，属于**始终生效**类型：所有对话都会自动加载并注入对应规范（不区分文件类型）
+- 修改规则文件后无需重启 IDE，下一轮对话即生效；规则管理页点击「刷新」可查看最新规则列表
+
+### 规则触发方式配置
+
+规则生效方式由规则文件头部 frontmatter 的 `trigger` 字段决定，支持以下三种：
+
+#### 1. 指定文件生效（trigger: glob）
+
+仅在处理匹配 glob 的文件时自动加载，例如让 Java 规范只对 `.java` 文件生效：
+
+```yaml
+---
+trigger: glob
+glob:
+- "**/*.java"
+---
+```
+
+- 处理 `.java` 文件时自动注入 `rules/java.md` 规范，其他类型文件不会加载
+- Python 规则同理，将 `glob` 改为 `"**/*.py"` 即可
+- 如需匹配多种文件类型，在 `glob` 下逐行追加即可，如：
 
   ```yaml
-  ---
-  trigger: always_on
-  ---
+  glob:
+  - "**/*.java"
+  - "**/*.kt"
   ```
 
-- 如需临时手动使用（不自动注入），将 frontmatter 改为 `trigger: manual`，在对话中输入 `@rule` 手动引用
-- 修改规则文件后无需重启 IDE，下一轮对话即生效；规则管理页点击「刷新」可查看最新规则列表
+- 规则管理页中「类型」会显示为**指定文件生效**
+
+#### 2. 始终生效（trigger: always_on，当前默认）
+
+所有对话均自动加载，不区分文件类型：
+
+```yaml
+---
+trigger: always_on
+---
+```
+
+#### 3. 手动引用（trigger: manual）
+
+不自动注入，在对话中通过 `@rule` 手动引用：
+
+```yaml
+---
+trigger: manual
+---
+```
 
 ## 设置说明
 
