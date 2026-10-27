@@ -1,6 +1,6 @@
 ---
 trigger: glob
 glob:
-- "**/*.python"
+- "**/*.py"
 ---
 # python 分层架构编码规范
