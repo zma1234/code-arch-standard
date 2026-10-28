@@ -1,4 +1,12 @@
-# 代码分层架构编码规范（Qoder Plugin）
+# 代码分层架构编码规范（Qoder CN for IntelliJ IDEA 插件）
+
+## 适用环境
+
+本插件是 **Qoder CN** 的插件，运行在 **JetBrains IntelliJ IDEA** 中（已在 IntelliJ IDEA 2026.2.3 上验证），随 Qoder CN 插件一起加载生效。
+
+- 适用：IntelliJ IDEA 内安装并使用 Qoder CN 的场景
+- 不适用：VS Code 版 Qoder、Qoder 独立客户端等非 IDEA 环境
+- 安装入口位于 IDEA 的 `Settings → Qoder CN → 个人设置 → 插件`，详见下文「安装与使用」
 
 ## 插件简介
 
@@ -26,9 +34,11 @@ java：
 
 ## 安装与使用
 
+> 以下步骤均在 **IntelliJ IDEA** 中安装 Qoder CN 后操作。
+
 ### 安装步骤
 
-**通过插件管理界面导入**
+**通过 IDEA 内的插件管理界面导入**
 
 1. 打开 IDEA 设置：`Settings → Qoder CN → 个人设置 → 插件`
 2. 点击右上角 **导入 ZIP**（本地 zip 包）或 **新建插件**
